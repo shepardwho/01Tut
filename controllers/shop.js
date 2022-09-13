@@ -4,8 +4,8 @@ exports.getProducts = (req, res, next) => {
     Product.fetchAll(products => {
         res.render('shop/product-list', {
             prods: products, 
-            docTitle: 'Shop', 
-            path: '/'});
+            docTitle: 'All products', 
+            path: '/products'});
     });
 };
 
@@ -16,4 +16,16 @@ exports.getIndex = (req, res, next) => {
             docTitle: 'Shop', 
             path: '/'});
     });
+};
+
+exports.getCart = (req, res, next) => {
+    res.render('shop/cart', { 
+            docTitle: 'Your cart', 
+            path: '/cart'});
+};
+
+exports.getCheckout = (req, res, next) => {
+    res.render('shop/checkout', {
+            docTitle: 'Checkout', 
+            path: '/checkout'});
 };
